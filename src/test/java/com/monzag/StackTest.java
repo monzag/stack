@@ -27,6 +27,13 @@ class StackTest {
         assertEquals(expected, stack.toString());
     }
 
+    @Test
+    void popTest() throws StackUnderFlowException, StackOverFlowException {
+        addDataToStack();
+        Integer removed = stack.pop();
+        Integer expected = 2;
+        assertEquals(expected, removed);
+    }
 
     @Test
     void peekTest() throws StackOverFlowException {
