@@ -1,5 +1,7 @@
 package com.monzag;
 
+import java.util.Arrays;
+
 public class Stack<T> {
 
     private int size;
@@ -18,5 +20,9 @@ public class Stack<T> {
         } else {
             elements[++top] = object;
         }
+    }
+
+    public String toString() {
+        return Arrays.toString(elements).replaceAll("(^\\[|\\]$|,)", "");
     }
 }
