@@ -11,7 +11,7 @@ class StackTest {
 
     @BeforeEach
     void createStack() {
-        this.stack = new Stack(3);
+        this.stack = new Stack<>(3);
     }
 
     @Test
@@ -38,6 +38,14 @@ class StackTest {
     @Test
     void popEmptyTest() throws StackUnderFlowException, StackOverFlowException {
         assertThrows(StackUnderFlowException.class, () -> stack.pop());
+    }
+
+    @Test
+    void stackAfterPopTest() throws StackUnderFlowException, StackOverFlowException {
+        addDataToStack();
+        stack.pop();
+        String expected = "0 1 null";
+        assertEquals(expected, stack.toString());
     }
 
     @Test
