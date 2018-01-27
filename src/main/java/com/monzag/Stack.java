@@ -22,6 +22,17 @@ public class Stack<T> {
         }
     }
 
+    public T pop() throws StackUnderFlowException {
+        if (top < 1) {
+            throw new StackUnderFlowException();
+        }
+
+        T removed = elements[top];
+        elements[top] = null;
+        top--;
+        return removed;
+    }
+
     public T peek() {
         return elements[top];
     }
