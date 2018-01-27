@@ -55,6 +55,13 @@ class StackTest {
         assertEquals(expected, stack.peek());
     }
 
+    @Test
+    void sizeTest() throws StackOverFlowException {
+        addDataToStack();
+        int expected = 3;
+        assertEquals(expected, stack.getSize());
+    }
+
     private void addDataToStack() throws StackOverFlowException {
         for (Integer i = 0; i < 3; i++) {
             stack.push(i);
