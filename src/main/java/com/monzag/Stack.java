@@ -37,6 +37,10 @@ public class Stack<T> {
         return elements[top];
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public String toString() {
         return Arrays.toString(elements).replaceAll("(^\\[|\\]$|,)", "");
     }
