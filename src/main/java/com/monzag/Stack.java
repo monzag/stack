@@ -11,4 +11,12 @@ public class Stack<T> {
         this.elements = (T[]) new Object[size];
         this.top = -1;
     }
+
+    public void push(T object) throws StackOverFlowException {
+        if (top == size - 1) {
+            throw new StackOverFlowException();
+        } else {
+            elements[++top] = object;
+        }
+    }
 }
