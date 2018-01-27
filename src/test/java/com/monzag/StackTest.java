@@ -69,6 +69,14 @@ class StackTest {
         assertEquals(expect, stack.getFreeSpace());
     }
 
+    @Test
+    void freeSpaceTest() throws StackOverFlowException, StackUnderFlowException{
+        stack.push(25);
+        stack.push(50);
+        int expect = 1;
+        assertEquals(expect, stack.getFreeSpace());
+    }
+
     private void addDataToStack() throws StackOverFlowException {
         for (Integer i = 0; i < 3; i++) {
             stack.push(i);
