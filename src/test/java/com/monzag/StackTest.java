@@ -36,6 +36,11 @@ class StackTest {
     }
 
     @Test
+    void popEmptyTest() throws StackUnderFlowException, StackOverFlowException {
+        assertThrows(StackUnderFlowException.class, () -> stack.pop());
+    }
+
+    @Test
     void peekTest() throws StackOverFlowException {
         addDataToStack();
         Integer expected = 2;
