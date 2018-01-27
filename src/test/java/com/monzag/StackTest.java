@@ -14,6 +14,11 @@ class StackTest {
         this.stack = new Stack(3);
     }
 
+    @Test
+    void pushTooManyTest() throws StackOverFlowException {
+        addDataToStack();
+        assertThrows(StackOverFlowException.class, () -> stack.push(3));
+    }
 
     private void addDataToStack() throws StackOverFlowException {
         for (Integer i = 0; i < 3; i++) {
