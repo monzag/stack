@@ -20,6 +20,13 @@ class StackTest {
         assertThrows(StackOverFlowException.class, () -> stack.push(3));
     }
 
+    @Test
+    void pushTest() throws StackOverFlowException {
+        addDataToStack();
+        String expected = "0 1 2";
+        assertEquals(expected, stack.toString());
+    }
+
     private void addDataToStack() throws StackOverFlowException {
         for (Integer i = 0; i < 3; i++) {
             stack.push(i);
