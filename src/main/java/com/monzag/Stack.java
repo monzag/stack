@@ -22,6 +22,10 @@ public class Stack<T> {
         }
     }
 
+    public T peek() {
+        return elements[top];
+    }
+
     public String toString() {
         return Arrays.toString(elements).replaceAll("(^\\[|\\]$|,)", "");
     }
