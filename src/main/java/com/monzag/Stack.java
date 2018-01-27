@@ -41,6 +41,14 @@ public class Stack<T> {
         return size;
     }
 
+    public int getFreeSpace() {
+        if (top > 0) {
+            return (size - 1) - top;
+        } else {
+            return size;
+        }
+    }
+
     public String toString() {
         return Arrays.toString(elements).replaceAll("(^\\[|\\]$|,)", "");
     }
